@@ -11,9 +11,11 @@ struct ContentView: View {
     //MARK: - PROPERTY
     
     @AppStorage("lineCount") var lineCount: Int = 1
+    @AppStorage("ThemeColor") var themeColor: String = "AccentColor"
     
     @State private var notes: [Note] = [Note]()
     @State private var text: String = ""
+    @State private var isSettingsPresented: Bool = false
     
     //MARK: - FUNCTION
     
@@ -58,7 +60,6 @@ struct ContentView: View {
             VStack {
                 HStack(alignment: .center, spacing: 4){
                     TextField("Add New Note", text: $text)
-                        .fixedSize()
                     
                     Button {
                         guard text.isEmpty == false else { return }
@@ -71,12 +72,12 @@ struct ContentView: View {
                         
                     } label: {
                         Image(systemName: "plus.circle")
-                            .font(.system(size: 32, weight: .semibold))
+                            .font(.system(size: 25, weight: .semibold))
                             .fixedSize()
                     }
                     .fixedSize()
                     .buttonStyle(PlainButtonStyle())
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color(themeColor))
                 }
                 Spacer()
                
@@ -88,10 +89,10 @@ struct ContentView: View {
                                     HStack {
                                         Capsule()
                                             .frame(width: 4)
-                                            .foregroundColor(.accentColor)
+                                            .foregroundColor(Color(themeColor))
                                         Text(notes[i].text)
                                             .lineLimit(lineCount)
-                                            .padding(.leading, 5)
+                                            .padding(.horizontal, 5)
                                     }
                                 
                             }
@@ -109,6 +110,21 @@ struct ContentView: View {
                     Spacer()
                 
                 }
+                HStack {
+                    Spacer()
+                    
+                    Image(systemName: "gear")
+                        .imageScale(.medium)
+                        .onTapGesture {
+                            isSettingsPresented.toggle()
+                        }
+                        .sheet(isPresented: $isSettingsPresented, content: {
+                            SettingsView()
+                    })
+                    
+                }
+                .foregroundColor(.secondary)
+
             }
             .onAppear(perform: {
                 load()

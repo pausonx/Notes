@@ -14,9 +14,11 @@
 		D018F84129C8E677006CC25C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D018F84029C8E677006CC25C /* Preview Assets.xcassets */; };
 		D018F84E29C8E8D8006CC25C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018F84D29C8E8D8006CC25C /* Note.swift */; };
 		D05FFBA329CA3AC2003D323A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FFBA229CA3AC2003D323A /* DetailView.swift */; };
-		D05FFBA529CA48C2003D323A /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FFBA429CA48C2003D323A /* CreditsView.swift */; };
+		D05FFBA529CA48C2003D323A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FFBA429CA48C2003D323A /* InfoView.swift */; };
 		D05FFBA829CA4911003D323A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FFBA729CA4911003D323A /* HeaderView.swift */; };
 		D05FFBAA29CA4B44003D323A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FFBA929CA4B44003D323A /* SettingsView.swift */; };
+		D0D1AAF629CB616800D5BF0C /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D1AAF529CB616800D5BF0C /* DataView.swift */; };
+		D0D1AAF829CB774200D5BF0C /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D1AAF729CB774200D5BF0C /* ThemeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +54,11 @@
 		D018F84029C8E677006CC25C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D018F84D29C8E8D8006CC25C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D05FFBA229CA3AC2003D323A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		D05FFBA429CA48C2003D323A /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		D05FFBA429CA48C2003D323A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D05FFBA729CA4911003D323A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D05FFBA929CA4B44003D323A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D0D1AAF529CB616800D5BF0C /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		D0D1AAF729CB774200D5BF0C /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,7 @@
 			children = (
 				D018F83B29C8E676006CC25C /* ContentView.swift */,
 				D05FFBA229CA3AC2003D323A /* DetailView.swift */,
-				D05FFBA429CA48C2003D323A /* CreditsView.swift */,
+				D05FFBA429CA48C2003D323A /* InfoView.swift */,
 				D05FFBA929CA4B44003D323A /* SettingsView.swift */,
 			);
 			path = View;
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				D05FFBA729CA4911003D323A /* HeaderView.swift */,
+				D0D1AAF529CB616800D5BF0C /* DataView.swift */,
+				D0D1AAF729CB774200D5BF0C /* ThemeButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,8 +242,10 @@
 				D05FFBA329CA3AC2003D323A /* DetailView.swift in Sources */,
 				D018F83A29C8E676006CC25C /* NotesApp.swift in Sources */,
 				D05FFBAA29CA4B44003D323A /* SettingsView.swift in Sources */,
-				D05FFBA529CA48C2003D323A /* CreditsView.swift in Sources */,
+				D05FFBA529CA48C2003D323A /* InfoView.swift in Sources */,
+				D0D1AAF629CB616800D5BF0C /* DataView.swift in Sources */,
 				D018F84E29C8E8D8006CC25C /* Note.swift in Sources */,
+				D0D1AAF829CB774200D5BF0C /* ThemeButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

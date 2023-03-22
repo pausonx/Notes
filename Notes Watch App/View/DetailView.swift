@@ -13,9 +13,6 @@ struct DetailView: View {
     let count: Int
     let index: Int
     
-    @State private var isCeditsPresented: Bool = false
-    @State private var isSettingsPresented: Bool = false
-    
     var body: some View {
         VStack(alignment: .center, spacing: 3) {
             HeaderView(title: "")
@@ -31,28 +28,9 @@ struct DetailView: View {
             Spacer()
             
             HStack(alignment: .center) {
-                Image(systemName: "gear")
-                    .imageScale(.large)
-                    .onTapGesture {
-                        isSettingsPresented.toggle()
-                    }
-                    .sheet(isPresented: $isSettingsPresented, content: {
-                        SettingsView()
-                    })
-                
                 Spacer()
-                
-                Text("\(count) / \(index + 1)")
+                Text("\(index + 1) / \(count) ")
                 Spacer()
-                
-                Image(systemName: "info.circle")
-                    .imageScale(.large)
-                    .onTapGesture {
-                        isCeditsPresented.toggle()
-                    }
-                    .sheet(isPresented: $isCeditsPresented, content: {
-                        CreditsView()
-                    })
             }
             .foregroundColor(.secondary)
         }
@@ -64,6 +42,6 @@ struct DetailView_Previews: PreviewProvider {
     static var sampleData: Note = Note(id: UUID(), text: "Init note")
     
     static var previews: some View {
-        DetailView(note: sampleData, count: 5, index: 1)
+        DetailView(note: sampleData, count: 10, index: 1)
     }
 }

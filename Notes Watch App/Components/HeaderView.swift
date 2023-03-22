@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HeaderView: View {
+    
+    @AppStorage("ThemeColor") var themeColor: String = "AccentColor"
+    
     var title: String = ""
     
     var body: some View {
@@ -16,7 +19,7 @@ struct HeaderView: View {
                 Text(title.uppercased())
                     .font(.title3)
                     .fontWeight(.bold)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color(themeColor))
             }
             HStack{
                 Capsule()
@@ -27,7 +30,7 @@ struct HeaderView: View {
                 Capsule()
                     .frame(height: 1)
             }
-            .foregroundColor(.accentColor)
+            .foregroundColor(Color(themeColor))
         }
     }
 }
