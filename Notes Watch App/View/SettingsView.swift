@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    //MARK: - PROPERTY
     
     @AppStorage("lineCount") var lineCount: Int = 1
     @AppStorage("ThemeColor") var themeColor: String = "AccentColor"
@@ -15,9 +16,16 @@ struct SettingsView: View {
     @State private var value: Float = 1.0
     @State private var isInfoPresented: Bool = false
     
+    //MARK: - FUNCTION
+    
+    /**
+     Updates the `lineCount` property with the integer value of `value`.
+     */
     func updateLineCount() {
         lineCount = Int(value)
     }
+    
+    //MARK: - BODY
     
     var body: some View {
         ScrollView {
@@ -78,6 +86,8 @@ struct SettingsView: View {
         }
     }
 }
+
+//MARK: - PREVIEW
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

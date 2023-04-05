@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct HeaderView: View {
+    //MARK: - PROPERTY
     
     @AppStorage("ThemeColor") var themeColor: String = "AccentColor"
     
     var title: String = ""
+    
+    //MARK: - BODY
     
     var body: some View {
         VStack {
@@ -34,6 +37,8 @@ struct HeaderView: View {
         }
     }
 }
+
+//MARK: - PREVIEW
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InfoView: View {
+    //MARK: - BODY
     
     var body: some View {
         VStack(spacing: 2) {
@@ -23,6 +24,8 @@ struct InfoView: View {
         }
     }
 }
+
+//MARK: - PREVIEW
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {

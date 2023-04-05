@@ -19,11 +19,35 @@ struct ContentView: View {
     
     //MARK: - FUNCTION
     
+    /**
+     Function that returns the path to the Documents directory in the application sandbox.
+     
+     - Returns: The path to the Documents directory in the application sandbox.
+     
+     - Note: The Documents directory is used to store files that are created and managed by the user. All files stored in this directory are automatically synchronized with iCloud if the user enables this feature.
+     
+     - Important: The function assumes that the application has permissions to access the Documents directory. If the application does not have these permissions, the function will return an error.
+     
+     - Warning: the Documents directory is one of the few directories that the app can access directly. Therefore, you should be careful about what you store in it and always make sure that the contents of this directory are safe for the user and do not violate the user's privacy.
+     
+     - Complexity: The runtime of the function is constant at O(1).
+     */
     func getDocumentDirectory() -> URL {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return path[0]
     }
     
+    /**
+     Saves the current notes to disk in JSON format.
+     
+     - Throws: An error if the data cannot be saved to disk.
+     
+     - Note: This function encodes the `notes` array as JSON data and saves it to a file called "notes" in the app's Documents directory. If the file already exists, its contents will be overwritten.
+     
+     - Important: This function assumes that the app has permission to access the Documents directory. If the app doesn't have this permission, the function will fail.
+     
+     - Complexity: The time complexity of this function is O(n), where n is the number of notes in the `notes` array.
+     */
     func save(){
         do {
             let data = try JSONEncoder().encode(notes)
@@ -34,7 +58,13 @@ struct ContentView: View {
         }
     }
     
-    
+    /**
+     Loads saved notes from disk into the `notes` array.
+     
+     - Note: This function attempts to read a file called "notes" in the app's Documents directory and decodes its contents as an array of `Note` objects using JSON decoding. If the file cannot be found or the data is invalid, the function does nothing.
+     
+     - Complexity: The time complexity of this function is O(n), where n is the number of notes in the file.
+     */
     func load() {
         DispatchQueue.main.async {
             do {
@@ -47,6 +77,13 @@ struct ContentView: View {
         }
     }
 
+    /**
+     Deletes the notes at the specified offsets from the `notes` array and saves the updated array to disk.
+     
+     - Parameter offsets: The indexes of the notes to delete from the `notes` array.
+     
+     - Important: This function mutates the `notes` array directly and saves the updated array to disk. If the save operation fails, the `notes` array will be out of sync with the saved data.
+     */
     func delete(offsets: IndexSet){
         withAnimation{
             notes.remove(atOffsets: offsets)
@@ -55,6 +92,7 @@ struct ContentView: View {
     }
     
     //MARK: - BODY
+    
     var body: some View {
         NavigationView {
             VStack {

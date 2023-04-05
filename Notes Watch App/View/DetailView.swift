@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct DetailView: View {
+    //MARK: - PROPERTY
     
     let note: Note
     let count: Int
     let index: Int
+    
+    //MARK: - BODY
     
     var body: some View {
         VStack(alignment: .center, spacing: 3) {
@@ -37,6 +40,8 @@ struct DetailView: View {
         .padding(3)
     }
 }
+
+//MARK: - PREVIEW
 
 struct DetailView_Previews: PreviewProvider {
     static var sampleData: Note = Note(id: UUID(), text: "Init note")

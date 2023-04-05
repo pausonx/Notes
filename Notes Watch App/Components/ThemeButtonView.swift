@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ThemeButtonView: View {
+    //MARK: - PROPERTY
     
     @AppStorage("ThemeColor") var themeColor: String = "AccentColor"
     
     let color: String
     
+    //MARK: - BODY
     var body: some View {
         Button {
             themeColor = color
@@ -25,6 +27,8 @@ struct ThemeButtonView: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
+
+//MARK: - PREVIEW
 
 struct ThemeButtonView_Previews: PreviewProvider {
     static var previews: some View {

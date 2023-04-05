@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct DataView: View {
+    //MARK: - PROPERTY
     
     let type: String
     let info: String
+    
+    //MARK: - BODY
     
     var body: some View {
         HStack {
@@ -31,6 +34,8 @@ struct DataView: View {
         }
     }
 }
+
+//MARK: - PREVIEW
 
 struct DataView_Previews: PreviewProvider {
     static var previews: some View {
